@@ -1,0 +1,15 @@
+1. 先用docker启动数据库，docker run -d --name mongo -p 27017:27017 mongo
+
+2. 创建us_states表后填入states.json信息形成数据库
+
+3. 启动后端 go run main.go
+
+4. 回到上级目录 cd..
+
+5. 再进入前端文件夹 cd frontend
+
+6. npm install
+
+7. npm run dev
+
+8. 打开http://localhost:5173/
