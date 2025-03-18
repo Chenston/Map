@@ -1,0 +1,11 @@
+type Query {
+  searchStates(query: String!): [State!]!
+}
+
+type State {
+  id: ID!
+  name: String!
+  abbreviation: String!
+  latitude: Float!
+  longitude: Float!
+}
