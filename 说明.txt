@@ -3,7 +3,7 @@
 2. docker cp "E:\GO\GoWorkplace\Map\states.json" mongo:/states.json
 这里的地址为保存states.json的地址
 
-3. docker exec -it mongo mongoimport --db us_states --collection states --file /stations.json --jsonArray --username admin --password admin123 --authenticationDatabase admin
+3. docker exec -it mongo mongoimport --db us_states --collection states --file /states.json --jsonArray --username admin --password admin123 --authenticationDatabase admin
 
 4. go run main.go
 
