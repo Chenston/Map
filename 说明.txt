@@ -1,13 +1,13 @@
-1. 先用docker启动数据库，docker run --name mongo -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin123 mongo
-如果已经创建过容器则docker start mongo
+1. docker run --name mongo -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin123 mongo
 
-2. 创建us_states表后填入states.json信息形成数据库
-docker cp "states.json" mongo:/stations.json
-docker exec -it mongo mongoimport --db us_states --collection stations --file /stations.json --jsonArray --username admin --password admin123 --authenticationDatabase admin
+2. docker cp "E:\GO\GoWorkplace\Map\states.json" mongo:/states.json
+这里的地址为保存states.json的地址
 
-3. 启动后端 go run main.go
+3. docker exec -it mongo mongoimport --db us_states --collection states --file /stations.json --jsonArray --username admin --password admin123 --authenticationDatabase admin
 
-4. 回到上级目录 cd..
+4. go run main.go
+
+ . 回到上级目录 cd..
 
 5. 再进入前端文件夹 cd frontend
 
@@ -16,3 +16,12 @@ docker exec -it mongo mongoimport --db us_states --collection stations --file /s
 7. npm run dev
 
 8. 打开http://localhost:5173/
+
+
+
+Pre. 如果已经有了容器mongo，为了测试用下面命令删除
+
+docker stop mongo
+
+docker rm mongo
+
